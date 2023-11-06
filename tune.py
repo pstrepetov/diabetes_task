@@ -97,7 +97,7 @@ def tune_catboost_hyperparameters(train_analysis_file, train_info_file,
     #Launching training if model_path is given
     if (model_path):
         train.train_catboost_model(train_analysis_file, train_info_file, model_path,
-                                   config_file = output_config_file, fill_vals_file = fill_vals_path)
+                                   config_file = output_config_file, fill_vals_path = fill_vals_path)
 
     
 
