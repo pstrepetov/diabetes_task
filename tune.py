@@ -116,7 +116,7 @@ def main():
                         help="Path to the output config file with best CatBoost hyperparameters")
     parser.add_argument("-n", "--n_trials", type=int,
                         help=f"int n_trials parameter for optuna, default: {num_trials}", default=num_trials)
-    parser.add_argument("-m", "--model_path", type=int,
+    parser.add_argument("-m", "--model_path", type=str,
                         help="Path to the file where model trained on best hyperparameters \
                               will be saved")
     parser.add_argument("-v", "--fill_vals_path", type=str,
