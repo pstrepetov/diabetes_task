@@ -11,7 +11,7 @@ import json
 import train
 from train import preprocess, target, cat_features
 
-num_trials = 40
+num_trials = 15
 
 def objective(trial, X_train, y_train, X_val, y_val):
     """
@@ -30,11 +30,7 @@ def objective(trial, X_train, y_train, X_val, y_val):
     param = {
         'depth': trial.suggest_int('depth', 3, 10),
         'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.1),
-        'iterations': trial.suggest_int('iterations', 1000, 1500),
         'l2_leaf_reg': trial.suggest_float('l2_leaf_reg', 0.5, 10),
-        'bagging_temperature': trial.suggest_float('bagging_temperature', 0.0, 2.0),
-        "objective": trial.suggest_categorical("objective", ["Logloss", "CrossEntropy"]),
-        "colsample_bylevel": trial.suggest_float("colsample_bylevel", 0.01, 1),
         "eval_metric": "F1",
     }
 
